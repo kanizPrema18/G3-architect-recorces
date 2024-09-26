@@ -1,3 +1,4 @@
+/* Work sans font style */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 .work-sans-font {
@@ -9,6 +10,9 @@
 /* Shared style */
 .display-flex{
     display: flex;
+}
+.text-primary{
+   color: #FF900E;
 }
 .text-gray{
     color: #424242;
@@ -28,17 +32,25 @@
    border: none;
    border-radius: 8px;
 }
-/* Header style */
+ main{
+   max-width: 1440px;
+   margin: 0 auto; /* center a newar jonno */
+ }
+ main > section{
+   margin-top: 130px;
+ }
+ .section-tittle{
+   font-size: 2.8rem; /* 48px */
+   font-weight: 700;
+}
 /* Navbar related style */
 .navbar{
     justify-content: space-between;
-    align-items: center;}
+    align-items: center;
+}
 .brand{
     font-weight: 700;
     font-size: 3rem; /* 45px dewa jeto. Kintu, 16px=1rem. Rem dewar subidha holo eta responsive hoi.*/
-}
-.nav-links{
-    
 }
 .nav-item{
    list-style: none;
@@ -68,8 +80,40 @@ nav li a{
 .banner-img{
     width: 100%; /* Responsive hbe. Joto choto e kora hok she j jaiga nibe tatei 100% width niye nibe */
 }
+/* Team and feature related styles */
+.teams{
+   align-items: center;
+}
+.team-img{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 24px;
+}
+.our-features{
+   max-width: 530px;
+   margin-left: 130px;
+}
+#quick{
+   font-weight: 500;
+}
 /* Responsive Media Query */
 @media screen and (max-width: 576px){
-   .navbar, .nav-links{
-     flex-direction: column;   } 
+   .navbar, .nav-links, .teams{
+     flex-direction: column;   
+   } 
+   .team-img{
+      grid-template-columns: repeat(1, 1fr);
+   }
+   .our-features{
+      margin-left: 20px;
+   }
+}
+/* Medium Device */
+@media screen and (min-width: 576px) and (max-width: 992px){
+   .teams{
+      flex-direction: column;
+   }
+   .our-features{
+      margin: 50px auto;
+   }
 }
